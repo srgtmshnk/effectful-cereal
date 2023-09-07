@@ -1,0 +1,26 @@
+cabal-version:      3.0
+name:               effectful-cereal
+version:            0.1.0.0
+license:            WTFPL
+license-file:       LICENSE
+author:             Sergey Timoshenko
+maintainer:         kewaopcode@icloud.com
+category:           Data
+build-type:         Simple
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:  Effectful.Cereal
+    other-modules:    Word
+    build-depends:    base ^>=4.16.4.0
+                    , effectful
+                    , text
+                    , bytestring
+                    , generic-lens
+                    , effectful-th
+                    , bytestring-strict-builder
+    hs-source-dirs:   src
+    default-language: GHC2021
