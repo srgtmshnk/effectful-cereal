@@ -19,6 +19,14 @@ encodePascalString bs = do
     else do
         putWord8 $ fromIntegral len
         putByteString bs
-
 ```
+
+```haskell
+decodePascalString
+    :: BinGet :> e
+    => Eff e ByteString
+decodePascalString =
+    getByteString . fromIntegral =<< getWord8
+```
+
 Also check out the examples directory.
